@@ -8,7 +8,7 @@ import os
 import requests
 # from werkzeug import secure_filename
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = './stuff'
+app.config['UPLOAD_FOLDER'] = './input'
 
 @app.route('/')
 def pt1():
