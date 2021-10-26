@@ -14,7 +14,7 @@ def response_page():
     return render_template('response_page.html', name=name)
 
 @app.route('/upload')
-def upload_file():
+def upload_files():
    return render_template('/upload.html')
 
 @app.route('/uploader', methods = ['GET', 'POST'])
