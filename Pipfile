@@ -6,11 +6,6 @@ name = "pypi"
 [packages]
 gunicorn = "*"
 flask = "*"
-requests = "*"
-camelot-py[base] = "*"
-numpy = "*"
-pandas = "*"
-requests = "*"
 
 [dev-packages]
 
