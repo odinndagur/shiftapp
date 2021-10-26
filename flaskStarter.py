@@ -13,8 +13,9 @@ app.config['UPLOAD_FOLDER'] = './input'
 
 @app.route('/')
 def pt1():
+    return 'lol'
     # file = "../input/11okt10nov.pdf"
-    file ='/input/11okt10nov.pdf'
+    # file = open('input/11okt10nov.pdf','rb')
     cellinfo = []
 
     tables = camelot.read_pdf(file,pages='1-end')
