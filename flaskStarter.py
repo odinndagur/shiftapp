@@ -12,14 +12,17 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './input'
 
 @app.route('/')
-def first_page():
-    return render_template('first_page.html')
-# def pt1():
+# def first_page():
+#     return render_template('first_page.html')
+def pt1():
+    curr_path=os.getcwd()
+    file = os.path.join(curr_path, 'input/input.pdf')
 #     # file = "../input/11okt10nov.pdf"
 #     # file = open('input/11okt10nov.pdf','rb')
 #     cellinfo = []
 
-#     tables = camelot.read_pdf(file,pages='1-end')
+    tables = camelot.read_pdf(file,pages='1-end')
+    return str(tables.n)
 #     cellinfo = tablestocellinfo(tables)
 
 #     with open('celldata1.json', 'w') as f:
