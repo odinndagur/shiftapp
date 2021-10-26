@@ -12,31 +12,30 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './input'
 
 @app.route('/')
-def pt1():
-    return 'lol'
-    # file = "../input/11okt10nov.pdf"
-    # file = open('input/11okt10nov.pdf','rb')
-    cellinfo = []
+def first_page():
+    return render_template('first_page.html')
+# def pt1():
+#     # file = "../input/11okt10nov.pdf"
+#     # file = open('input/11okt10nov.pdf','rb')
+#     cellinfo = []
 
-    tables = camelot.read_pdf(file,pages='1-end')
-    cellinfo = tablestocellinfo(tables)
+#     tables = camelot.read_pdf(file,pages='1-end')
+#     cellinfo = tablestocellinfo(tables)
 
-    with open('celldata1.json', 'w') as f:
-        json.dump(cellinfo,f)
+#     with open('celldata1.json', 'w') as f:
+#         json.dump(cellinfo,f)
 
-    docs = []
+#     docs = []
 
-    # tables[0].col = tables[0].df.col + 1
-    # tables[0].row = tables[0].df.row + 2
+#     # tables[0].col = tables[0].df.col + 1
+#     # tables[0].row = tables[0].df.row + 2
 
-    # tables[1].col = tables[1].df.col + 1
-    # tables[1].row = tables[1].df.row + 1
+#     # tables[1].col = tables[1].df.col + 1
+#     # tables[1].row = tables[1].df.row + 1
 
 
-    cleanuptables(tables,docs)
-    return str(docs)
-# def first_page():
-#     return render_template('first_page.html')
+#     cleanuptables(tables,docs)
+#     return str(docs)
 
 @app.route('/response_page', methods = ['POST'])
 def response_page():
