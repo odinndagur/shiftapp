@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import os
 from stuff import *
 import camelot
@@ -22,7 +22,9 @@ def pt1():
 #     cellinfo = []
 
     tables = camelot.read_pdf(file,pages='1-end')
-    return str(tables.n)
+    return send_from_directory(curr_path,'input.pdf',
+                                            as_attachment=True)
+    # return str(tables.n)
 #     cellinfo = tablestocellinfo(tables)
 
 #     with open('celldata1.json', 'w') as f:
