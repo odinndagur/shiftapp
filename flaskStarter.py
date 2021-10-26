@@ -20,10 +20,12 @@ def pt1():
 #     # file = "../input/11okt10nov.pdf"
 #     # file = open('input/11okt10nov.pdf','rb')
 #     cellinfo = []
-
-    tables = camelot.read_pdf(file,pages='1-end')
-    return send_from_directory(curr_path,'input.pdf',
-                                            as_attachment=True)
+    if file:
+        tables = camelot.read_pdf(file,pages='1-end')
+        return send_from_directory(curr_path,'input.pdf',
+                                                as_attachment=True)
+    else:
+        return 'not found'
     # return str(tables.n)
 #     cellinfo = tablestocellinfo(tables)
 
