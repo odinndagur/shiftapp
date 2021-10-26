@@ -12,20 +12,20 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './input'
 
 @app.route('/')
-# def first_page():
-#     return render_template('first_page.html')
-def pt1():
-    curr_path=os.getcwd()
-    file = os.path.join(curr_path, 'input/input.pdf')
-#     # file = "../input/11okt10nov.pdf"
-#     # file = open('input/11okt10nov.pdf','rb')
-#     cellinfo = []
-    if file:
-        tables = camelot.read_pdf(file,pages='1-end')
-        return send_from_directory(curr_path,'input.pdf',
-                                                as_attachment=True)
-    else:
-        return 'not found'
+def first_page():
+    return render_template('first_page.html')
+# def pt1():
+#     curr_path=os.getcwd()
+#     file = os.path.join(curr_path, 'input/input.pdf')
+# #     # file = "../input/11okt10nov.pdf"
+# #     # file = open('input/11okt10nov.pdf','rb')
+# #     cellinfo = []
+#     if file:
+#         tables = camelot.read_pdf(file,pages='1-end')
+#         return send_from_directory(curr_path,'input.pdf',
+#                                                 as_attachment=True)
+#     else:
+#         return 'not found'
     # return str(tables.n)
 #     cellinfo = tablestocellinfo(tables)
 
